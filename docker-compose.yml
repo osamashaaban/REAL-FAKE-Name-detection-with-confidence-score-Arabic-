@@ -1,0 +1,18 @@
+version: '3'
+# Create a service 
+services: 
+    api-A:                       # Service Name                 
+      image: api_image           # Select pre-built docker image 
+      container_name: api-A-con  # Rename image container
+      environment:               # Define environment variables used in the image container
+        - PORT=4000
+      ports:
+        - "4000:4000"
+
+    api-B:
+      image: api_image
+      container_name: api-B-con 
+      environment: 
+        - PORT=4001
+      ports:
+        - "4001:4001"
